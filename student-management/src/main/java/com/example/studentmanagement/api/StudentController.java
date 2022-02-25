@@ -27,6 +27,25 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
+    @GetMapping("/name")
+    // localhost:8080/api/student/name?name=zhangsan
+    public List<Student> getStudents(@RequestParam String name) {
+        return studentService.getStudentByName(name);
+    }
+
+    @GetMapping("/contain_name")
+    // localhost:8080/api/student/name?contain_name=T
+    public List<Student> getStudentsContainName(@RequestParam String name) {
+        return studentService.getStudentsContainName(name);
+    }
+
+    @GetMapping("/class")
+    // localhost:8080/api/student/class?year=2022&number=1
+    public List<Student> getStudentsInClass(@RequestParam int year,
+                                            @RequestParam int number) {
+        return studentService.getStudentsInClass(year, number);
+    }
+
     @PostMapping("/register")
     public ResponseEntity<String> registerStudent(@RequestBody Student student) {
         try {
