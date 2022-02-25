@@ -4,6 +4,7 @@ import com.example.studentmanagement.exceptions.InvalidUniversityClassException;
 import com.example.studentmanagement.exceptions.StudentEmptyNameException;
 import com.example.studentmanagement.model.Student;
 import com.example.studentmanagement.service.StudentService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,7 @@ public class StudentController {
     }
 
     @GetMapping
+    @RequiresPermissions("student:read")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
