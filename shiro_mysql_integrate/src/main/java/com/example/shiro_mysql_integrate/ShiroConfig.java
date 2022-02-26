@@ -17,7 +17,7 @@ public class ShiroConfig {
 
         HashMap<String, String> filterChain = new HashMap<>();
         filterChain.put("/index", "anon");
-        filterChain.put("/**", "authBasic");
+        filterChain.put("/**", "authcBasic");
 
         factoryBean.setFilterChainDefinitionMap(filterChain);
 

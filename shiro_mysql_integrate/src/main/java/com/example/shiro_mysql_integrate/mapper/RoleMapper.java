@@ -12,12 +12,12 @@ public interface RoleMapper {
     // SELECT p.name
     // FROM permission p
     // INNER JOIN role_permission rp
-    // ON rp.permission_id = p.od
+    // ON rp.permission_id = p.id
     // WHERE rp.role_id = #{role_id}
-    @Select("SELECT p.name" +
-            "FROM permission p" +
-            "INNER JOIN role_permission rp" +
-            "ON rp.permission_id = p.od" +
+    @Select("SELECT p.name " +
+            "FROM permission p " +
+            "INNER JOIN role_permission rp " +
+            "ON rp.permission_id = p.id " +
             "WHERE rp.role_id = #{role_id}")
     Set<String> getPermissionByRoleId(@Param("role_id" ) Long roleId);
 }
