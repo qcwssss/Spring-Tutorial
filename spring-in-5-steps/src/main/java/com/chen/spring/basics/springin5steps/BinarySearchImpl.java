@@ -14,12 +14,10 @@ public class BinarySearchImpl {
     }
 
     public int binarySearch(int[] nums, int target) {
-        // Implementing Sorting logic
 
         int[] sorted = sortAlgo.sort(nums);
         System.out.println(sortAlgo);
         // Search the Array
-
         return 3;
     }
 }
