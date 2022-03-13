@@ -6,9 +6,9 @@
     https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <!-- p namespace; setter injectcion -->
+    <!-- p namespace; setter injection -->
     <bean id="user" class="pojo.User" p:name="Bowers" p:age="28"/>
     <!-- c namespace; constructor injection -->
-    <bean id="user2" class="pojo.User" c:name="Ben" c:age="18"/>
+    <bean id="user2" class="pojo.User" c:name="Ben" c:age="18" scope="prototype"/>
 
 </beans>
