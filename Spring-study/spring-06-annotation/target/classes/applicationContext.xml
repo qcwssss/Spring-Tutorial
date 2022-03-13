@@ -8,12 +8,8 @@
         https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config/>
+    <context:component-scan base-package="com"/>
 
-    <bean id="cat11" class="com.pojo.Cat"/>
-    <bean id="dog22" class="com.pojo.Dog"/>
-    <bean id="dog122" class="com.pojo.Dog"/>
-
-    <bean id="person" class="com.pojo.Person" />
-
+    <bean id="user" class="com.chen.pojo.User"/>
 
 </beans>
