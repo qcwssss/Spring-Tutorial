@@ -32,6 +32,6 @@ public class UserServiceProxy implements UserService{
     }
 
     private void log(String msg) {
-        System.out.println("Execute " + " method");
+        System.out.println("Execute " + msg + " method");
     }
 }
