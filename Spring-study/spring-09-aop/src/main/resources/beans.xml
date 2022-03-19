@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--    register bean-->
+    <bean id="userService" class="com.chen.service.UserServiceImpl" />
+    <bean id="diy" class="com.chen.diy.MyPointCut"/>
+
+
+    <!--    Approach #2: spring API -->
+    <aop:config>
+        <aop:aspect ref="diy">
+            <aop:pointcut id="myPointcut" expression="execution(* com.chen.service.UserServiceImpl.*(..))"/>
+            <aop:before pointcut-ref="myPointcut" method="before"/>
+            <aop:after pointcut-ref="myPointcut" method="after"/>
+        </aop:aspect>
+
+    </aop:config>
+
+
+</beans>
