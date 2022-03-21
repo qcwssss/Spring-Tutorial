@@ -15,10 +15,11 @@
         <module>spring-04-di</module>
         <module>spring-05-Autowired</module>
         <module>spring-06-annotation</module>
-        <module>spring-06-appconfig</module>
+        <module>spring-06-annotation</module>
         <module>spring-07-appconfig</module>
         <module>spring-08-proxy</module>
         <module>spring-09-aop</module>
+        <module>spring-10-mybatis</module>
     </modules>
 
     <properties>
@@ -34,7 +35,6 @@
             <version>5.3.15</version>
         </dependency>
     </dependencies>
-
 
 
 </project>
